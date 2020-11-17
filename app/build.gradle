@@ -54,6 +54,7 @@ android {
 }
 
 def lifecycleVersion = "2.2.0"
+def koinVersion = "2.2.0-rc-4"
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -71,4 +72,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     // Lifecycles only (without ViewModel or LiveData)
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+
+    // Koin for Android
+    implementation "org.koin:koin-android:$koinVersion"
+    // Koin Android Scope feature
+    implementation "org.koin:koin-android-scope:$koinVersion"
+    // Koin Android ViewModel feature
+    implementation "org.koin:koin-android-viewmodel:$koinVersion"
 }

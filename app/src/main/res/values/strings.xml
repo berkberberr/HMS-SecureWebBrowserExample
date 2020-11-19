@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">HMS-SecureWebBrowserExample</string>
+    <string name="app_name">Secure Web Browser</string>
+    <string name="app_copyright">©2020 Berk Berber All rights reserved.</string>
 </resources>

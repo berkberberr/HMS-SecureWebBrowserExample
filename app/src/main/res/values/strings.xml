@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Secure Web Browser</string>
     <string name="app_copyright">©2020 Berk Berber All rights reserved.</string>
+    <string name="hms_not_available">Huawei Mobile Services not available</string>
+    <string name="download_hms_core">This app requires to Huawei Mobile Services. You need to download the HMS Core.</string>
+
+    <!-- Data -->
+    <string name="error_item">Error Item</string>
 </resources>

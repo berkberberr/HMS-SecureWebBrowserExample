@@ -5,4 +5,5 @@
     <dimen name="small_title_size">20sp</dimen>
     <dimen name="text_size">16dp</dimen>
     <dimen name="small_text_size">14dp</dimen>
+    <dimen name="average_icon_size">200dp</dimen>
 </resources>

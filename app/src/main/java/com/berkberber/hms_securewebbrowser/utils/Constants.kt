@@ -11,4 +11,8 @@ object Constants: KoinComponent{
 
     // Data
     val ERROR_ITEM = context.getString(R.string.error_item)
+
+    // String value for service
+    const val BASIC_INTEGRITY = "basicIntegrity"
+    const val SAFETY_DETECT_ALGORITHM = "SHA1PRNG"
 }

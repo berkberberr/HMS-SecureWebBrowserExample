@@ -3,6 +3,9 @@
     <string name="app_copyright">©2020 Berk Berber All rights reserved.</string>
     <string name="hms_not_available">Huawei Mobile Services not available</string>
     <string name="download_hms_core">This app requires to Huawei Mobile Services. You need to download the HMS Core.</string>
+    <string name="device_not_secure">Device is not secure</string>
+    <string name="device_not_secure_message">"Your device is not secure. Check your device security again.
+        \nIf your device has been rooted, you can't use this app."</string>
 
     <!-- Data -->
     <string name="error_item">Error Item</string>

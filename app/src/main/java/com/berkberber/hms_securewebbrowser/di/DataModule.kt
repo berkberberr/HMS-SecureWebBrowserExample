@@ -12,4 +12,9 @@ val dataModule = module {
         icon = ContextCompat.getDrawable(get(named("appContext")), R.drawable.huawei)!!,
         title = androidContext().getString(R.string.hms_not_available),
         message = androidContext().getString(R.string.download_hms_core)) }
+
+    factory<ErrorItem>(named("DeviceNotSecure")) { ErrorItem(
+        icon = ContextCompat.getDrawable(get(named("appContext")), R.drawable.ic_device_not_secure)!!,
+        title = androidContext().getString(R.string.device_not_secure),
+        message = androidContext().getString(R.string.device_not_secure_message)) }
 }

@@ -8,13 +8,13 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
         <ImageView
             android:id="@+id/errorImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@{errorItem.icon}" />
+            android:layout_width="@dimen/average_icon_size"
+            android:layout_height="@dimen/average_icon_size"
+            android:src="@{errorItem.icon}"/>
         <TextView
             android:id="@+id/errorTitle"
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:textAlignment="center"
             android:textColor="@color/title_color"
             android:textSize="@dimen/small_title_size"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/errorMessage"
             android:layout_width="match_parent"

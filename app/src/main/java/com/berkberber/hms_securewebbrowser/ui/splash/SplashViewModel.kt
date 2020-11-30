@@ -3,6 +3,7 @@ package com.berkberber.hms_securewebbrowser.ui.splash
 import com.berkberber.hms_securewebbrowser.R
 import com.berkberber.hms_securewebbrowser.data.enums.ErrorType
 import com.berkberber.hms_securewebbrowser.data.model.ErrorItem
+import com.berkberber.hms_securewebbrowser.data.model.MaliciousApps
 import com.berkberber.hms_securewebbrowser.data.model.NavigationInfo
 import com.berkberber.hms_securewebbrowser.interfaces.IServiceListener
 import com.berkberber.hms_securewebbrowser.service.SafetyDetectService
@@ -48,7 +49,20 @@ class SplashViewModel: BaseViewModel(), KoinComponent{
     }
 
     private fun checkMaliciousApps(){
-        // TODO: Check malicious apps
+        SafetyDetectService.checkMaliciousApps(object: IServiceListener<List<MaliciousApps>?>{
+            override fun onSuccess(successResult: List<MaliciousApps>?) {
+                successResult?.let {
+
+                } ?: kotlin.run {
+                    postNavigationAction(NavigationInfo(R.id.action_splashFragment_to_browserFragment))
+                }
+            }
+
+            override fun onError(errorType: ErrorType) {
+
+            }
+
+        })
     }
 
     private fun deviceNotSecure(){

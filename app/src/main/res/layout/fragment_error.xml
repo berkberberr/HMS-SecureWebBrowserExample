@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="errorItem"
+            type="com.berkberber.hms_securewebbrowser.data.model.ErrorItem" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/errorImage"
+            android:layout_width="@dimen/average_icon_size"
+            android:layout_height="@dimen/average_icon_size"
+            android:src="@{errorItem.icon}"/>
+        <TextView
+            android:id="@+id/errorTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:text="@{errorItem.title}"
+            android:textAlignment="center"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/small_title_size"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:text="@{errorItem.message}"
+            android:textAlignment="center"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/text_size"/>
+    </LinearLayout>
+</layout>

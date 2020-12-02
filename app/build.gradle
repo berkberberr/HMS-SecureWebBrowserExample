@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.huawei.agconnect'
 }
 
 android {
@@ -33,10 +34,12 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "APP_ID", "\"****\""
         }
         debug {
             signingConfig signingConfigs.release
             debuggable true
+            buildConfigField "String", "APP_ID", "\"****\""
         }
     }
 
@@ -56,6 +59,10 @@ android {
 def lifecycleVersion = "2.2.0"
 def koinVersion = "2.2.0-rc-4"
 def navigationVersion = "2.3.1"
+def lottieVersion = "3.5.0"
+
+def hmsBaseVersion = "5.0.3.300"
+def hmsSafetyDetectVersion = "5.0.3.300"
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -78,10 +85,19 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
+    //Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
     // Koin for Android
     implementation "org.koin:koin-android:$koinVersion"
     // Koin Android Scope feature
     implementation "org.koin:koin-android-scope:$koinVersion"
     // Koin Android ViewModel feature
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
+
+    // HMS Base
+    implementation "com.huawei.hms:base:${hmsBaseVersion}"
+
+    // HMS - SafetyDetect
+    implementation "com.huawei.hms:safetydetect:${hmsSafetyDetectVersion}"
 }

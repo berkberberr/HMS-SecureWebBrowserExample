@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="errorItem"
+            type="com.berkberber.hms_securewebbrowser.data.model.ErrorItem" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/fragment_error"
+            android:id="@+id/maliciousAppsError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/default_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:errorItem="@{errorItem}" />
+        <TextView
+            android:id="@+id/maliciousAppsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:text="Malicious Apps"
+            android:textAlignment="center"
+            android:textColor="@color/dark_text"
+            android:textSize="@dimen/small_title_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/maliciousAppsError"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/maliciousAppsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/maliciousAppsTitle"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

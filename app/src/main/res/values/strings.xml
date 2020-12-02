@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">HMS-SecureWebBrowserExample</string>
+    <string name="app_name">Secure Web Browser</string>
+    <string name="app_copyright">©2020 Berk Berber All rights reserved.</string>
+    <string name="hms_not_available">Huawei Mobile Services not available</string>
+    <string name="download_hms_core">This app requires to Huawei Mobile Services. You need to download the HMS Core.</string>
+    <string name="device_not_secure">Device is not secure</string>
+    <string name="device_not_secure_message">"Your device is not secure. Check your device security again.
+        \nIf your device has been rooted, you can't use this app."</string>
+    <string name="malicious_apps_message">Your have to delete malicious apps which have listed in the below. \n
+        You can click on an app to delete them.</string>
+    <string name="risky_app_description">This app is risky. You should delete this application</string>
+    <string name="virus_app_description">This app has a virus. You must delete this application</string>
+    <string name="should_delete_app">"You should delete this application for your device's security"</string>
+
+    <!-- Data -->
+    <string name="error_item">Error Item</string>
+    <string name="malicious_apps">Malicious Apps</string>
 </resources>

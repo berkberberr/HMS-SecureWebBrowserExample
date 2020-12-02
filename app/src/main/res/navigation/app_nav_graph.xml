@@ -34,6 +34,10 @@
     <fragment
         android:id="@+id/maliciousFragment"
         android:name="com.berkberber.hms_securewebbrowser.ui.malicious.MaliciousFragment"
-        android:label="MaliciousFragment" />
+        android:label="MaliciousFragment" >
+        <action
+            android:id="@+id/action_maliciousFragment_to_browserFragment"
+            app:destination="@id/browserFragment" />
+    </fragment>
 
 </navigation>

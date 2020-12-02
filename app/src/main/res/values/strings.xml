@@ -10,6 +10,7 @@
         You can click on an app to delete them.</string>
     <string name="risky_app_description">This app is risky. You should delete this application</string>
     <string name="virus_app_description">This app has a virus. You must delete this application</string>
+    <string name="should_delete_app">"You should delete this application for your device's security"</string>
 
     <!-- Data -->
     <string name="error_item">Error Item</string>

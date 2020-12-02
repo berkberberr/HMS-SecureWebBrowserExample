@@ -52,7 +52,7 @@ object SafetyDetectService : KoinComponent {
     }
 
 
-    fun checkMaliciousApps(serviceListener: IServiceListener<List<MaliciousApps>?>){
+    fun checkMaliciousApps(serviceListener: IServiceListener<ArrayList<MaliciousApps>?>){
         client.maliciousAppsList
             .addOnSuccessListener { maliciousAppsListResp ->
                 if(maliciousAppsListResp.rtnCode == CommonCode.OK){
@@ -60,7 +60,7 @@ object SafetyDetectService : KoinComponent {
                     if(maliciousAppsList.isEmpty())
                         serviceListener.onSuccess(null)
                     else{
-                        var maliciousApps = mutableListOf<MaliciousApps>()
+                        var maliciousApps = arrayListOf<MaliciousApps>()
                         for(maliciousApp in maliciousAppsList){
                             maliciousApp.apply {
                                 maliciousApps.add(MaliciousApps(packageName = apkPackageName,

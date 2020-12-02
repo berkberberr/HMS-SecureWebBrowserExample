@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.berkberber.hms_securewebbrowser.data.model.NavigationInfo
 
 abstract class BaseFragment<VM: BaseViewModel, B:ViewBinding>: Fragment(){
     protected lateinit var binding: B

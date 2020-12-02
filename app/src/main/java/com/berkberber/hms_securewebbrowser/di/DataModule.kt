@@ -17,4 +17,9 @@ val dataModule = module {
         icon = ContextCompat.getDrawable(get(named("appContext")), R.drawable.ic_device_not_secure)!!,
         title = androidContext().getString(R.string.device_not_secure),
         message = androidContext().getString(R.string.device_not_secure_message)) }
+
+    factory<ErrorItem>(named("MaliciousApps")) { ErrorItem(
+        icon = ContextCompat.getDrawable(get(named("appContext")), R.drawable.ic_malicious_apps)!!,
+        title = androidContext().getString(R.string.device_not_secure),
+        message = androidContext().getString(R.string.malicious_apps_message)) }
 }

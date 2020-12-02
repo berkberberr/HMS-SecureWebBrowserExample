@@ -1,5 +1,6 @@
 package com.berkberber.hms_securewebbrowser.ui.splash
 
+import android.os.Bundle
 import com.berkberber.hms_securewebbrowser.R
 import com.berkberber.hms_securewebbrowser.data.enums.ErrorType
 import com.berkberber.hms_securewebbrowser.data.model.ErrorItem
@@ -8,6 +9,7 @@ import com.berkberber.hms_securewebbrowser.data.model.NavigationInfo
 import com.berkberber.hms_securewebbrowser.interfaces.IServiceListener
 import com.berkberber.hms_securewebbrowser.service.SafetyDetectService
 import com.berkberber.hms_securewebbrowser.ui.base.BaseViewModel
+import com.berkberber.hms_securewebbrowser.utils.Constants
 import com.berkberber.hms_securewebbrowser.utils.HmsHelper
 import com.berkberber.hms_securewebbrowser.utils.toBundle
 import org.koin.core.component.inject
@@ -20,6 +22,7 @@ class SplashViewModel: BaseViewModel(), KoinComponent{
 
     private val hmsNotAvailableItem: ErrorItem = get(named("HmsNotAvailable"))
     private val deviceNotSecureItem: ErrorItem = get(named("DeviceNotSecure"))
+    private val maliciousAppsItem: ErrorItem = get(named("MaliciousApps"))
 
     fun makeSecurityControls(){
         checkIsHmsAvailable()
@@ -49,10 +52,17 @@ class SplashViewModel: BaseViewModel(), KoinComponent{
     }
 
     private fun checkMaliciousApps(){
-        SafetyDetectService.checkMaliciousApps(object: IServiceListener<List<MaliciousApps>?>{
-            override fun onSuccess(successResult: List<MaliciousApps>?) {
-                successResult?.let {
+        SafetyDetectService.checkMaliciousApps(object: IServiceListener<ArrayList<MaliciousApps>?>{
+            override fun onSuccess(successResult: ArrayList<MaliciousApps>?) {
+                successResult?.let { maliciousApps ->
+                    var bundle = Bundle()
+                    bundle.putSerializable(Constants.ERROR_ITEM, maliciousAppsItem)
+                    bundle.putSerializable(Constants.MALICIOUS_APPS, maliciousApps)
 
+                    postNavigationAction(NavigationInfo(
+                        actionId = R.id.action_splashFragment_to_maliciousFragment,
+                        bundle = bundle)
+                    )
                 } ?: kotlin.run {
                     postNavigationAction(NavigationInfo(R.id.action_splashFragment_to_browserFragment))
                 }

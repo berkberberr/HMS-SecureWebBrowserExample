@@ -11,6 +11,7 @@ object Constants: KoinComponent{
 
     // Data
     val ERROR_ITEM = context.getString(R.string.error_item)
+    val MALICIOUS_APPS = context.getString(R.string.malicious_apps)
 
     // String value for service
     const val BASIC_INTEGRITY = "basicIntegrity"
